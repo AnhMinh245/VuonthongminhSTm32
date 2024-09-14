@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống giám sát môi trường nhà kính</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./polished-snowflake-4032.animaapp.io_files/image-23@2x.png" alt="=school logo">
+            <h1>HỆ THỐNG GIÁM SÁT MÔI TRƯỜNG NHÀ KÍNH</h1>
+            <img src="static/faculty.jpg" alt="faculty logo">
+        </div>
+        <div class="body">
+            <div class="body-half">
+                <div class="body-header">
+                    <div class="title-wrap"><h2>Thông số</h2></div>
+                </div>
+                <div class="body-content">
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="temperature.png" alt="Nhiệt độ">
+                            <h3 class="item-label">Nhiệt độ</h3>
+                        </div>
+                        <h3 class="item-label" id="temperature">25°C</h3>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="humidity.png" alt="Độ ẩm">
+                            <h3 class="item-label">Độ ẩm</h3>
+                        </div>
+                        <h3 class="item-label" id="humidity">70%</h3>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="soil_humidity.png" alt="Độ ẩm đất">
+                            <h3 class="item-label">Độ ẩm đất</h3>
+                        </div>
+                        <h3 class="item-label" id="soilHumidity">5%</h3>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="sunny.png" id="sunStatusImg" alt="Cường độ sáng">
+                            <h3 class="item-label">Cường độ sáng</h3>
+                        </div>
+                        <h3 class="item-label" id="sunStatus">Ngày</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical"></div>
+            <div class="body-half">
+                <div class="body-header">
+                    <div class="title-wrap"><h2>Điều khiển</h2></div>
+                </div>
+                <div class="body-content">
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="light.png" alt="Đèn sáng">
+                            <h3 class="item-label">Đèn</h3>
+                        </div>
+                        <button id="toggleLight">OFF</button>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="fan.png" alt="Quạt">
+                            <h3 class="item-label">Quạt</h3>
+                        </div>
+                        <button id="toggleFan">OFF</button>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="pump.png" alt="Máy bơm">
+                            <h3 class="item-label">Máy bơm</h3>
+                        </div>
+                        <button id="togglePump">OFF</button>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content">
+                            <img src="spray.png" alt="Máy phun sương">
+                            <h3 class="item-label">Máy phun sương</h3>
+                        </div>
+                        <button id="toggleMist">OFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container">
+            <div>
+                <div class="button-container">
+                    <button id="exportExcel" style="width: auto;">Xuất Excel</button>
+                </div>
+                <h3 id="datetime"></h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="container">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+        <div>
+            <img src="logo2.jpg" alt="Logo">
+        </div>
+    </div>
+    <div class="header">
+        <h1>HỆ THỐNG GIÁM SÁT MÔI TRƯỜNG NHÀ KÍNH</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>Thông số</h2>
+            <div class="item">
+                <img src="temperature.png" alt="Nhiệt độ">
+                <div class="value" id="temperature">25°C</div>
+                <div>Nhiệt độ</div>
+            </div>
+            <div class="item">
+                <img src="humidity.png" alt="Độ ẩm">
+                <div class="value" id="humidity">70%</div>
+                <div>Độ ẩm</div>
+            </div>
+            <div class="item">
+                <img src="soil_humidity.png" alt="Độ ẩm đất">
+                <div class="value" id="soilHumidity">5%</div>
+                <div>Độ ẩm đất</div>
+            </div>
+            <div class="item">
+                <img src="sun.jpg" alt="Cường độ sáng">
+                <div class="value" id="sunStatus">Ngày</div>
+                <div>Cường độ sáng</div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Điều khiển</h2>
+            <div class="control">
+                <div class="item">
+                    <img src="light.png" alt="Đèn sáng">
+                    <div class="value">Đèn</div>
+                    <button id="toggleLight">OFF</button>
+                </div>
+                <div class="item">
+                    <img src="fan.png" alt="Quạt">
+                    <div class="value">Quạt</div>
+                    <button id="toggleFan">OFF</button>
+                </div>
+                <div class="item">
+                    <img src="pump.png" alt="Máy bơm">
+                    <div class="value">Máy bơm</div>
+                    <button id="togglePump">OFF</button>
+                </div>
+                <div class="item">
+                    <img src="spray.png" alt="Máy phun sương">
+                    <div class="value">Máy phun sương</div>
+                    <button id="toggleMist">OFF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button id="exportExcel">Xuất Excel</button>
+        <p id="datetime"></p>
+    </div> -->
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDoQBJJua3wsXYWaEKPtLIlPQYRHOgtnLA",
+            authDomain: "he-thong-giam-sat-nha-kinh.firebaseapp.com",
+            databaseURL: "https://he-thong-giam-sat-nha-kinh-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "he-thong-giam-sat-nha-kinh",
+            storageBucket: "he-thong-giam-sat-nha-kinh.appspot.com",
+            messagingSenderId: "724041142417",
+            appId: "1:724041142417:web:54b8df3dbe6bfb805caf30",
+            measurementId: "G-3DB570V2FR"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Data logging every 1 minute
+        let dataLogs = [];
+        setInterval(logData, 60000);
+
+        function logData() {
+            firebase.database().ref().once('value').then((snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    const logEntry = {
+                        'Thời gian': new Date().toLocaleString('vi-VN'),
+                        'Nhiệt độ': data.temp + '°C',
+                        'Độ ẩm': data.humidity + '%',
+                        'Độ ẩm đất': data.soil_hum + '%',
+                        'Ngày/Đêm': data.sun ? 'Ngày' : 'Đêm',
+                        'Đèn': data.light ? 'Bật' : 'Tắt',
+                        'Quạt': data.fan ? 'Bật' : 'Tắt',
+                        'Bơm': data.pump ? 'Bật' : 'Tắt',
+                        'Phun Sương': data.mist ? 'Bật' : 'Tắt'
+                    };
+                    dataLogs.push(logEntry);
+                    updateUI(data);
+                }
+            });
+        }
+
+        // Real-time updates from Firebase
+        firebase.database().ref().on('value', (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                updateUI(data);
+            }
+        });
+        function changeSunStatusIcon(ele){
+            const sunStatusImg = document.getElementById('sunStatusImg')
+            if (ele.textContent === 'Ngày'){
+                sunStatusImg.src = 'sunny.png'
+            }
+            else{
+                sunStatusImg.src = 'moon.png'
+            }
+        }
+        // Update UI with Firebase data
+        function updateUI(data) {
+            const sunStatus = document.getElementById('sunStatus')
+            document.getElementById('temperature').textContent = data.temp + '°C';
+            document.getElementById('humidity').textContent = data.humidity + '%';
+            document.getElementById('soilHumidity').textContent = data.soil_hum + '%';
+            sunStatus.textContent = data.sun ? 'Ngày' : 'Đêm';
+            changeSunStatusIcon(sunStatus)
+            document.getElementById('toggleLight').textContent = data.light ? 'ON' : 'OFF';
+            document.getElementById('toggleFan').textContent = data.fan ? 'ON' : 'OFF';
+            document.getElementById('togglePump').textContent = data.pump ? 'ON' : 'OFF';
+            document.getElementById('toggleMist').textContent = data.mist ? 'ON' : 'OFF';
+        }
+
+        // Toggle device state on Firebase and update button text
+        function toggleDevice(device, buttonId) {
+            firebase.database().ref(device).once('value').then((snapshot) => {
+                const currentStatus = snapshot.val();
+                firebase.database().ref().update({
+                    [device]: !currentStatus
+                });
+            });
+        }
+
+        document.getElementById('toggleLight').addEventListener('click', () => toggleDevice('light', 'toggleLight'));
+        document.getElementById('toggleFan').addEventListener('click', () => toggleDevice('fan', 'toggleFan'));
+        document.getElementById('togglePump').addEventListener('click', () => toggleDevice('pump', 'togglePump'));
+        document.getElementById('toggleMist').addEventListener('click', () => toggleDevice('mist', 'toggleMist'));
+
+        // Export data to Excel
+        document.getElementById('exportExcel').addEventListener('click', () => {
+            // Check if there's existing data in the local storage
+            let existingLogs = localStorage.getItem('dataLogs');
+
+            // Parse the data if it exists, otherwise initialize an empty array
+            let savedLogs = existingLogs ? JSON.parse(existingLogs) : [];
+
+            // Merge the new logs with the old logs
+            let combinedLogs = savedLogs.concat(dataLogs);
+
+            if (combinedLogs.length > 0) {
+                // Store the combined logs back into local storage
+                localStorage.setItem('dataLogs', JSON.stringify(combinedLogs));
+
+                // Create a new Excel sheet with the combined data
+                const ws = XLSX.utils.json_to_sheet(combinedLogs);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Dữ liệu');
+
+                // Export the combined data to an Excel file
+                XLSX.writeFile(wb, 'DuLieuMoiTruong.xlsx');
+
+                // Clear the current logs
+                dataLogs = [];
+            } else {
+                alert('Chưa có dữ liệu để xuất.');
+            }
+        });
+
+
+        // Update Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString('vi-VN');
+            const time = now.toLocaleTimeString('vi-VN');
+            document.getElementById('datetime').textContent = `Ngày: ${date} | Giờ: ${time}`;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call to display the date and time immediately
+    </script>
+</body>
+
+</html>
